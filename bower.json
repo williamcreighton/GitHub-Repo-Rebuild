@@ -1,0 +1,10 @@
+{
+  "name": "javascript-051414-hw",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "underscore": "~1.6.0",
+    "momentjs": "~2.6.0"
+  },
+  "devDependencies": {}
+}

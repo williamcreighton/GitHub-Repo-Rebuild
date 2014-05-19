@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript 051414 HW</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="header">
+            <div class="navigation">
+                <div class="logo" style="font-size: 29px;"><a i class="fa fa-github" href="https://github.com/"></a></div>
+                <div class="notification">
+                    <div class="notification-id"></div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Search or type a command" class="navigation-search">
+                    <div class="navigation-hidden navigation-hidden-display"></div>
+                    <ul class="navigation-top">
+                        <li class="navigation-list"><a class="navigation-type" href="https://github.com/explore">Explore</a></li>
+                        <li class="navigation-list"><a class="navigation-type" href="https://gist.github.com/">Gist</a></li>
+                        <li class="navigation-list"><a class="navigation-type" href="https://github.com/blog">Blog</a></li>
+                        <li class="navigation-list"><a class="navigation-type" href="https://help.github.com/">Help</a></li>
+                    </ul>
+                    <ul class="navigation-user-tools-ul">
+                        <li class="navigation-list">name</li>
+                        <li class="navigation-list">name</li>
+                        <li class="navigation-list">name</li>
+                        <li class="navigation-list" style="font-size: 20px;"><i class="fa fa-sign-out"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+            <!-- Beginning Main Container -->
+
+        <div class="main-container">
+            <div class="sidebar">
+               <!--  <span>Followers</span>
+                <span>Starred</span>
+                <span>Following</span> -->
+
+            </div>
+            <div><img src="/images/icons/tab.png" style="
+                margin-left: 10px;
+                margin-bottom: 27px;"></div>
+            <div class="repo-list">
+
+                <!-- <div class="tab-nav"></div>
+                <div class="filter-bar">
+                <input type="text" class="input-repo" placeholder="Find a repository…" tabindex="2"></div>
+                <div class="repo-list-li"></div> -->
+            </div>
+            </div>
+            
+        </div>
+
+            <!-- End Main Container -->
+        <div class="main-container">
+            <div class="footer">
+                     <ul class="ul-footer-links-left">
+                        <li class="li-footer-links-left">© 2014 GitHub, Inc.</li>
+                        <li class="li-footer-links-left"><a href="https://help.github.com/articles/github-terms-of-service">Terms</a></li>
+                        <li class="li-footer-links-left"><a href="https://help.github.com/articles/github-privacy-policy">Privacy</a></li>
+                        <li class="li-footer-links-left"><a href="https://help.github.com/articles/github-security">Security</a></li>
+                        <li class="li-footer-links-left"><a href="https://github.com/contact">Contact</a></li>
+                    </ul>
+                    <span class="footer-logo" style="font-size: 28px;"><a style="color:#ccc" i class="fa fa-github" href="https://github.com/"></a></span>
+                    <ul class="ul-footer-links-right">
+                        <li class="li-footer-links-right"><a href="https://status.github.com/">Status</a></li>
+                        <li class="li-footer-links-right"><a href="https://developer.github.com/">API</a></li>
+                        <li class="li-footer-links-right"><a href="http://training.github.com/">Training</a></li>
+                        <li class="li-footer-links-right"><a href="http://shop.github.com/">Shop</a></li>
+                        <li class="li-footer-links-right"><a href="https://github.com/blog">Blog</a></li>
+                        <li class="li-footer-links-right"><a href="https://github.com/about">About</a></li>
+                    </ul>   
+            </div>
+        </div>            
+
+            <!-- Beginning API Pull for Sidebar -->
+
+       <script type="text/template" class="profile">
+            <div><img class="sidebar-avatar" src=" <%= avatar_url %> "></div>
+            <div class="sidebar-name"><%= name %></div>
+            <div class="sidebar-login"><%= login %></div>
+            <div class="sidebar-details">
+                
+                <div class="sidebar-details-location">
+                <span class="sidebar-details-location-icon"><img src="/images/icons/location-icon.png"></span>
+                <span><%= location %></span>
+                </div>
+                <div class ="sidebar-details-date">
+                <span class="sidebar-details-date-icon"><img src="/images/icons/clock-icon-sidebar.png"></span>
+                <span> Joined on </span>
+                <span><%= moment(created_at).format('MMM DD, YYYY') %></span>
+                </div>
+            </div>
+            <div class="sidebar-stats">
+                <div><a class="sidebar-stats-followers" href=" <%= followers_url %> "> <%= followers %> </a></div>
+                <div class="sidebar-stats-followers">1</div>
+                <div><a class="sidebar-stats-following" href=" <%= following_url %> "> <%= following %> </a></div>
+            </div>    
+        </script> 
+
+            <!-- End API Pull for Sidebar -->
+
+            <!-- Beginning API Pull for Repo List -->
+
+        <script type="text/template" class="repos">
+            <div class="repo-list-li">
+                <ul class="repo-stats">
+                    <li class="repo-stats-li"><%= language %></li>
+                    <span class="repo-stargazers" ><i class="fa fa-star"></i></span>
+                    <li><a class="repo-stats-li" href=" <%= stargazers_url %> "> <%= stargazers_count %> </a></li>
+                    <span class="repo-forks"><img src="/images/icons/gray-fork-mini.png"></span>
+                    <li><a class="repo-stats-li" href=" <%= forks_url %> "> <%= forks_count %> </a></li>
+                </ul> 
+                <span class="repo-list-icon"><img src="/images/icons/book-icon-big-gray.png"></span>
+                <h3 class="repo-name"><a href=" <%= html_url %> "> <%= name %> </a></h3>
+                <div class="repo-description"><%= description %></div>
+                <div>
+                    <p class="repo-last-updated">Last Updated</p>
+                    <p class="repo-updated"><%= moment(updated_at).format("dddd [at] h:mma") %></p>
+                </div>
+             </div>
+        </script>
+
+            <!-- End API Pull for Repo List -->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <script src="../bower_components/momentjs/moment.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/githubRepo.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
