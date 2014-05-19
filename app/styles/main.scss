@@ -66,8 +66,9 @@ body {
     color: #888;
     
     &:hover {
-        color: red;
+        color: #4183c4;
         text-decoration: none;
+        cursor: pointer;
     }
 }
 
@@ -172,8 +173,8 @@ body {
 }
 
 .navigation-user-tools-li {
-    float: left;
-    margin-left: 5px;
+    margin-top: 4px;
+    padding-left: 15px;
     display: inline-block;
 }
 
